@@ -8,6 +8,17 @@
 </head>
 <body>
   <div id="app"></div>
+  <!-- mark：
+    script module 是 ES 模块在浏览器端的实现，
+    在浏览器端使用 export、import 的方式导入和导出模块，
+    浏览器将对其内部的 import 引用发起 http 请求获取模块内容，
+    ESM 天生按需加载，只有 import 的时候才会去按需加载。
+
+    webpack 使用 map 存放模块 id 和路径，使用 webpack_require 方法获取模块导出，
+    省略了对模块的组装，不需要生成 bundle，
+    不管某个模块的代码是否执行到，这个模块都要打包到 bundle 里，
+    随着项目越来越大打包后的 bundle 也越来越大。
+  -->
   <script type="module" src="/src/main.js"></script>
 </body>
 </html>
